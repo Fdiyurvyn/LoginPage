@@ -1,0 +1,130 @@
+/* Tema Luar Angkasa dengan Animasi */
+body {
+    background: radial-gradient(circle at center, #08243a 0%, #780886 100%);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    animation: backgroundMove 10s infinite alternate linear;
+  }
+  
+  @keyframes backgroundMove {
+    0% { background-position: center top; }
+    100% { background-position: center bottom; }
+  }
+  
+  .login-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0ed3a8;
+    text-shadow: 0 0 10px #fff;
+  }
+  
+  .input-box {
+    position: relative;
+    margin: 20px 0;
+  }
+  
+  .input-box input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #3f1538;
+    color: #fff;
+    outline: none;
+    font-size: 18px;
+  }
+  
+  .input-box label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #bbb;
+    transition: 0.3s;
+  }
+  
+  .input-box input:focus + label,
+  .input-box input:valid + label {
+    top: -10px;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(45deg, #ff00ff, #8000ff);
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .login-btn:hover {
+    background: linear-gradient(45deg, #8000ff, #ff00ff);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+  }
+  
+  /* Efek Bintang */
+  @keyframes twinkling {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+  }
+  
+  .stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: twinkling 2s infinite alternate;
+  }
+  
+  /* Efek Bintang Jatuh */
+  @keyframes fallingStars {
+    0% { transform: translateY(-100vh) translateX(0); opacity: 1; }
+    100% { transform: translateY(100vh) translateX(-20vw); opacity: 0; }
+  }
+  
+  .falling-stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  .falling-star {
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background: white;
+    opacity: 0;
+    animation: fallingStars linear infinite;
+  }
+  
+  /* Membuat banyak bintang jatuh */
+  .falling-stars div {
+    position: absolute;
+    top: -10px;
+    left: calc(100% * var(--x));
+    animation-duration: calc(2s + 2s * var(--duration));
+    animation-delay: calc(1s * var(--delay));
+  } 
+  
