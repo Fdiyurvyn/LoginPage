@@ -1,19 +1,16 @@
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Mencegah form dari reload
+document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-    // Ambil nilai input username dan password
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
-    // Contoh username dan password yang benar
-    var validUsername = "admin";
-    var validPassword = "1234";
+    if (username === "admin" && password === "1234") {
+        localStorage.setItem("isLoggedIn", "true");
 
-    // Cek apakah username dan password sesuai
-    if (username === validUsername && password === validPassword) {
-        localStorage.setItem("isLoggedIn", "true"); // Simpan status login
-        window.location.href = "https://fdiyurvyn.github.io/3DSolarSytem/"; // Redirect ke halaman lain
+        // Ubah action form lalu submit
+        this.action = "https://fdiyurvyn.github.io/3DSolarSytem/";
+        this.submit();
     } else {
-        document.getElementById("error-message").style.display = "block"; // Tampilkan pesan error
+        alert("Username atau password salah!");
     }
 });
