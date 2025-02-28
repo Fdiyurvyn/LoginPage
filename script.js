@@ -12,7 +12,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     // Cek apakah username dan password sesuai
     if (username === validUsername && password === validPassword) {
         localStorage.setItem("isLoggedIn", "true"); // Simpan status login
-        window.location.href = "http://127.0.0.1:3000/solar.html"; // Redirect ke halaman lain
+        window.location.href = "https://fdiyurvyn.github.io/3DSolarSytem/"; // Redirect ke halaman lain
     } else {
         document.getElementById("error-message").style.display = "block"; // Tampilkan pesan error
     }
